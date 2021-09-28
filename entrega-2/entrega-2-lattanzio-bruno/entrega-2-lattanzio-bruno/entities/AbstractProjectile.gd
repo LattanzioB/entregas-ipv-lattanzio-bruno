@@ -1,6 +1,7 @@
 extends Sprite
 class_name Projectile
 
+
 signal delete_requested(projectile)
 
 export (float) var speed 

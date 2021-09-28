@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/textures/background.png" type="Texture" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://entities/world/TurretsSpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/world/Floor.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1498.59, 357.17, 0, 0, 0, 0, 1484.32, 76.5171, 0, 0, 0, 0, 1194.19, 199.312, 0, 0, 0, 0, 996.2, -24.1342, 0, 0, 0, 0, 784.068, -142.928, 0, 0, 0, 0, 195.755, -199.497, 0, 0, 0, 0, 170.299, -374.859, 0, 0, 0, 0, 1233.79, -411.629, 0, 0, 0, 0, 1536.43, -499.31, 0, 0, 0, 0, 1513.41, -680.597, 0, 0, 0, 0, 1078.46, -744.094, 0, 0, 0, 0, 335.558, -798.065, 0, 0, 0, 0, 230.79, -661.549, 0, 0, 0, 0, 170.469, -372.642, 0, 0, 0, 0, 1498.59, 357.17 )
+}
+
+[node name="Main" type="Node"]
+script = ExtResource( 3 )
+
+[node name="TurretPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="SpawnLocation" type="PathFollow2D" parent="TurretPath"]
+position = Vector2( 1498.59, 357.17 )
+rotation = -1.62156
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 413.003, 395.272 )
+GRAVITY = 10.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="TurretsSpawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1315.51, 278.685 )
+
+[node name="Floor" parent="." instance=ExtResource( 6 )]
+position = Vector2( 333.041, 579.959 )
+
+[node name="Floor7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 332.532, 165.184 )
+
+[node name="Floor8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1264.25, -174.538 )
+
+[node name="Floor9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 743.227, -506.782 )
+
+[node name="Floor10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1260.47, -842.801 )
+
+[node name="Floor3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -86.7199, 199.187 )
+rotation = 1.5708
+
+[node name="Floor5" parent="." instance=ExtResource( 6 )]
+position = Vector2( -86.7199, -594.514 )
+rotation = 1.5708
+
+[node name="Floor6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1684.82, -600.864 )
+rotation = 1.5708
+
+[node name="Floor4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1685.04, 199.424 )
+rotation = 1.5708
+
+[node name="Floor2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1265.21, 576.183 )
+
+[node name="Floor11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 989.602, 576.183 )
