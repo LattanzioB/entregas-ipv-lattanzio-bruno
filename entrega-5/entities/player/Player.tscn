@@ -7,7 +7,7 @@
 [ext_resource path="res://entities/player/PlayerProjectile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/player/states/IdleState.gd" type="Script" id=6]
 [ext_resource path="res://assets/textures/player/girl_spritesheet.png" type="Texture" id=7]
-[ext_resource path="res://assets/textures/cannon.png" type="Texture" id=8]
+[ext_resource path="res://assets/textures/player/raygunPurpleBig.png" type="Texture" id=8]
 [ext_resource path="res://entities/player/states/DeadState.gd" type="Script" id=9]
 [ext_resource path="res://entities/player/states/JumpState.gd" type="Script" id=10]
 [ext_resource path="res://entities/player/states/DashState.gd" type="Script" id=11]
@@ -16,7 +16,7 @@
 radius = 31.6034
 height = 24.6237
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "dead"
 step = 0.041
 tracks/0/type = "value"
@@ -50,7 +50,7 @@ tracks/0/keys = {
 "values": [ 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "jump"
 length = 1.35
 step = 0.045
@@ -67,8 +67,7 @@ tracks/0/keys = {
 "values": [ 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "walk"
+[sub_resource type="Animation" id=5]
 length = 0.98
 loop = true
 step = 0.041
@@ -147,7 +146,7 @@ position = Vector2( 15, 0 )
 cast_to = Vector2( 0, 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/dead = SubResource( 4 )
+anims/dead = SubResource( 2 )
 anims/idle = SubResource( 3 )
-anims/jump = SubResource( 5 )
-anims/walk = SubResource( 2 )
+anims/jump = SubResource( 4 )
+anims/walk = SubResource( 5 )
